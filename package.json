@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss ./src/styles.css -o ./public/styles.css",
-    "prod": "NODE_ENV=production postcss ./src/styles.css -o ./public/styles.css",
-    "start": "nodemon public/index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
