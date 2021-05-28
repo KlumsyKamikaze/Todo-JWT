@@ -7,6 +7,7 @@ const verifyToken = require('./routes/verifyToken');
 const authRoute = require("./routes/auth");
 const todoRoute = require("./routes/todo");
 const cookieParser = require('cookie-parser');
+const port = process.env.PORT || 3000
 
 
 mongoose.connect(
@@ -48,4 +49,4 @@ app.get('/todo',verifyToken,(req,res) => {
 app.use("/api/user", authRoute);
 app.use("/api/todo", todoRoute)
 
-app.listen(3000, () => console.log("server is running now"));
+app.listen(port, () => console.log("server is running now"));
