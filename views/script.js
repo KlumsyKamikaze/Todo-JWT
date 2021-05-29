@@ -161,7 +161,7 @@ function deleteSubTask(event, obj) {
   saveArr();
 }
 
- fetch("http://localhost:3000/api/todo/retrieve")
+ fetch("https://todo-jwt.herokuapp.com/api/todo/retrieve")
   .then((response) => response.json())
   .then((json) => {
     document.getElementById("nameUser").innerText= json.name;
