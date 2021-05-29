@@ -4,7 +4,7 @@ const checkBtn = document.getElementById("checkBtn");
 const inputField = document.getElementById("inputfield");
 const tasksWrapper = document.getElementById("tasksWrapper");
 var hostName =  "http://localhost:3000"
-hostName = "https://myapp.herokuapp.com";
+hostName = "https://todo-jwt.herokuapp.com";
 var arrTodo = [];
 
 function addTodo(event) {
