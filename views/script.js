@@ -163,7 +163,7 @@ function deleteSubTask(event, obj) {
   saveArr();
 }
 
- fetch(`https://${hostName}/api/todo/retrieve`)
+ fetch(`${hostName}/api/todo/retrieve`)
   .then((response) => response.json())
   .then((json) => {
     document.getElementById("nameUser").innerText= json.name;
@@ -556,7 +556,7 @@ function completedTasks(array) {
 }
 
 function saveArr() {
-  fetch(`https://${hostName}/api/todo/save`, {
+  fetch(`${hostName}/api/todo/save`, {
     method: "POST",
     body: JSON.stringify(arrTodo),
     headers: {
