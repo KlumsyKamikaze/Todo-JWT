@@ -3,6 +3,7 @@ const trashBtn = document.getElementById("trashBtn");
 const checkBtn = document.getElementById("checkBtn");
 const inputField = document.getElementById("inputfield");
 const tasksWrapper = document.getElementById("tasksWrapper");
+const hostName =  process.env.NODE_ENV === "production" ? "https://myapp.herokuapp.com" : "http://localhost:3000";
 var arrTodo = [];
 
 function addTodo(event) {
@@ -161,7 +162,7 @@ function deleteSubTask(event, obj) {
   saveArr();
 }
 
- fetch("https://todo-jwt.herokuapp.com/api/todo/retrieve")
+ fetch(`https://${hostName}/api/todo/retrieve`)
   .then((response) => response.json())
   .then((json) => {
     document.getElementById("nameUser").innerText= json.name;
@@ -554,7 +555,7 @@ function completedTasks(array) {
 }
 
 function saveArr() {
-  fetch("http://localhost:3000/api/todo/save", {
+  fetch(`https://${hostName}/api/todo/save`, {
     method: "POST",
     body: JSON.stringify(arrTodo),
     headers: {

@@ -40,7 +40,7 @@ router.post("/login", async (req,res) =>{
 
     console.log("password is valid as well");
 
-    const token = jwt.sign({_id: user._id},"jfndcnjgslcnkmbfgbs")
+    const token = jwt.sign({_id: user._id},process.env.TOKEN)
     res.cookie('authToken',token).redirect('/todo')
     console.log('left from login for todo')
     

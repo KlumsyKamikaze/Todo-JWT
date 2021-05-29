@@ -1,5 +1,11 @@
 const mongoose = require("mongoose")
 
+const subtodoSchema = new mongoose.Schema({
+    key: Number,
+    value: String,
+    completed: Boolean,
+})
+
 const userSchema = new mongoose.Schema({
     name: {
         type : String,
@@ -23,10 +29,13 @@ const userSchema = new mongoose.Schema({
         type:Date,
         default: Date.now()
     },
-    arrTodo:{
-        type: JSON,
-        default: null,
-    }
+    arrTodo:[{
+        key: Number,
+        value: String,
+        completed: Boolean,
+        hasSubTodo: Boolean,
+        subTodo: [subtodoSchema],
+    }],
 })
 
 module.exports = mongoose.model('User',userSchema)
